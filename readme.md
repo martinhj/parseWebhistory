@@ -1,5 +1,8 @@
 #README parse web history
 
+## Requiers:
+Requiers the W3C dom package (w3c-dom.jar).
+
 ## In Parse.java:
 Change the path to correspond to your file.
 
