@@ -36,10 +36,11 @@ class DrawPage {
       for (int i = 1; i < sb.length(); i++) {
         if (i % 78 == 0) sb.insert(i, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t ");
       }
-
+      String link = "";
       String boxtext = "Title: \t\t\t\t\t\t\t\t\t " + sb.toString() + "\n";
       boxtext += "Page visits:\t" + page.visitCount + "\n";
       sb = new StringBuilder(page.url);
+      link = sb.toString();
       for (int i = 1; i < sb.length(); i++) {
         if (i % 78 == 0) sb.insert(i, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t ");
       }
@@ -47,9 +48,8 @@ class DrawPage {
         sb = new StringBuilder(sb.substring(0, 78*2));
         sb.append("...");
       }
-
       boxtext += "URL: \t\t\t\t\t\t\t\t\t\t " + sb.toString();
-      setBox(boxtext, bpos);
+      setBox(boxtext, link, bpos);
       //text(page.visitCount, bpos.x + 15, bpos.y + 45 + 100);
       //text(page.url, bpos.x + 15, bpos.y + 60 + 100);
       fill(234, 69, 62, 90);

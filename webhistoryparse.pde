@@ -13,6 +13,7 @@ int counter = 0;
 
 boolean box = false;
 String boxText = "";
+String linkText = "";
 String boxSiteText = "";
 PVector boxPos;
 
@@ -48,9 +49,14 @@ void mouseMoved() {
   }
 
 }
-  void setBox(String text, PVector pos) {
+
+void mousePressed() {
+  if (box) link(linkText);
+}
+  void setBox(String text, String ltext, PVector pos) {
     box = true;
     boxText = text;
+    linkText = ltext;
     boxPos = pos;
   }
 
