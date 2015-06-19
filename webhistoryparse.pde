@@ -51,7 +51,10 @@ void mouseMoved() {
 }
 
 void mousePressed() {
-  if (box) link(linkText);
+  if (box) {
+    println("opening: " + linkText);
+    link(linkText);
+  }
 }
   void setBox(String text, String ltext, PVector pos) {
     box = true;
