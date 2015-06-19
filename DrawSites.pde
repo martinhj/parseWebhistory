@@ -10,7 +10,7 @@ class DrawSites {
     Collections.sort(sites);
     translate(width/2, height/2);
     //rotate(-2 * PI/16);
-    for (int i = sites.size() - 1 ; i >= sites.size() - (109); i--) {
+    for (int i = sites.size() - 1 ; i >= sites.size() - (11); i--) {
     //for (int i = sites.size() - 28 ; i >= sites.size() - 29; i--) {
       //rotate(0);/
       metaPosition.add(new PVector(rectSize, rectHeight + 3));

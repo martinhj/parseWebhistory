@@ -17,14 +17,15 @@ String boxSiteText = "";
 PVector boxPos;
 
 void setup() {
-  size(3200, 2000);
+  //size(3200, 2000);
+  size(800, 500);
   background(79, 72, 72);
   smooth(8);
   noStroke();
   fill(fillcolor);
   //fill(234, 69, 62);
-  
-  font = createFont("Futura", 12);
+
+  font = createFont("Futura", 11);
   textFont(font);
   ds = new DrawSites();
 }
@@ -45,7 +46,7 @@ void mouseMoved() {
       dp.mouseDraw();
     }
   }
-  
+
 }
   void setBox(String text, PVector pos) {
     box = true;

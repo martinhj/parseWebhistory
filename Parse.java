@@ -17,13 +17,13 @@ import java.util.HashMap;
 class Parse {
   File f;
   ArrayList<Page> pages = new ArrayList<Page>();
-  HashMap<String, Site> sites = 
+  HashMap<String, Site> sites =
     new HashMap<String, Site>();
   public Parse(int fileNum) {
     if (fileNum == 0) {
       f = new File("HistoryTest.xml");
     } else {
-      f = new File("/Users/martinhj/dev/processing/webhistoryparse/History.xml");
+      f = new File("/Users/martinhj/dev/processing/webhistoryparseb/History.xml");
     }
     parseFile();
     //printOut();
@@ -43,10 +43,10 @@ class Parse {
       DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
       Document doc = dBuilder.parse(f);
       doc.getDocumentElement().normalize();
-      
+
 
       NodeList nList = doc.getElementsByTagName("*");
-       
+
       for (int temp = 2; temp < nList.getLength() - 1; temp++) {
 
         Node nNode = nList.item(temp);
@@ -104,7 +104,7 @@ class Parse {
       if(nList.item(position+i).getTextContent().compareTo("visitCount") == 0 ) n = 2;
       if(nList.item(position+i).getTextContent().compareTo("lastVisitedDate") == 0) n = 3;
       switch (n) {
-        case 1 : 
+        case 1 :
           title = nList.item(position+i+1).getTextContent();
           break;
         case 2 :
@@ -115,7 +115,7 @@ class Parse {
           break;
       }
     }
-      
+
     visitCount = Integer.parseInt(visitCounttmp);
     datetmp2 = Double.parseDouble(datetmp);
     date = (long) datetmp2;
@@ -135,7 +135,7 @@ class Parse {
 
       return nList.item(position + 1).getTextContent();
     }
-  
+
     return null;
   }
 
@@ -182,7 +182,7 @@ class Parse {
 		Site nextnextnextMostVisitedSite = null;
 		Site nextnextnextnextMostVisitedSite = null;
 		for (Site s : sites.values()) {
-			if(s.count > mostVisits && s.siteName != null) { 
+			if(s.count > mostVisits && s.siteName != null) {
 				mostVisits = s.count;
 				nextnextnextnextMostVisitedSite = nextnextnextMostVisitedSite;
 				nextnextnextMostVisitedSite = nextnextMostVisitedSite;
@@ -202,7 +202,7 @@ class Parse {
 		System.out.println("The next most visited site is: " + nextnextnextnextMostVisitedSite.siteName);
 		System.out.println("With " + nextnextnextnextMostVisitedSite.count);
   }
-      
+
 
 
 

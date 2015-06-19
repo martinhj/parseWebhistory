@@ -18,7 +18,7 @@ class DrawPage {
   void draw() {
     rect(position.x - sizeAdd, position.y - sizeAdd, length + sizeAdd * 2, rectSize + sizeAdd * 2);
     if (sizeAdd > 0) {
-      
+
       bpos.y = map(position.y, 0, 800, 0, 600);
       rect(position.x - sizeAdd, position.y - sizeAdd, length + sizeAdd * 2, rectSize + sizeAdd * 2);
       stroke(234, 69, 62, 90);
@@ -34,17 +34,18 @@ class DrawPage {
       StringBuilder sb = new StringBuilder(page.title);
 
       for (int i = 1; i < sb.length(); i++) {
-        if (i % 56 == 0) sb.insert(i, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t ");
+        if (i % 78 == 0) sb.insert(i, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t ");
       }
 
       String boxtext = "Title: \t\t\t\t\t\t\t\t\t " + sb.toString() + "\n";
       boxtext += "Page visits:\t" + page.visitCount + "\n";
       sb = new StringBuilder(page.url);
       for (int i = 1; i < sb.length(); i++) {
-        if (i % 56 == 0) sb.insert(i, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t ");
+        if (i % 78 == 0) sb.insert(i, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t ");
       }
-      if (sb.length() > 200) {
-        sb = new StringBuilder(sb.substring(0, 200));
+      if (sb.length() > 78*2) {
+        sb = new StringBuilder(sb.substring(0, 78*2));
+        sb.append("...");
       }
 
       boxtext += "URL: \t\t\t\t\t\t\t\t\t\t " + sb.toString();
