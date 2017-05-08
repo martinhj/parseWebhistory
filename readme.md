@@ -1,5 +1,6 @@
-#README parse web history
+# README parse web history
 
+![Alt text](forgithub.jpg "Visual representation of web usage.")
 ## Requiers:
 Requiers the W3C dom package (w3c-dom.jar).
 
